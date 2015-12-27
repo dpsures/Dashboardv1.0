@@ -1,0 +1,41 @@
+<div>
+	<center>
+		<h3>{{audioModelDesc}}</h3>
+		<!--
+		  <audio controls="controls" autoplay="true">
+			<p>Your browser does not support the audio element.</p>
+			<source src="mp3/sample.mp3"  type="audio/mpeg"/>
+		</audio>
+		-->
+
+		<embed id="audioId" src="mp3/sample.mp3" type="audio/mpeg" autoplay="true"
+			autostart=false loop="false" width="300px" height="60px" onended="reply()">
+		</embed>
+
+		<!--
+		<audio media-player="audio1" data-playlist="playlist1" controls="controls" autoplay="true">
+			<source
+				src="mp3/sample.mp3"
+				type="audio/mpeg">
+		</audio>
+		<span ng-show="audio1.playing">Player status: Playing</span> <span
+			ng-show="!audio1.playing">Player status: Paused</span>
+-->
+	</center>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+ 
+  function reply(){
+	  alert("ended");
+  }
+  
+  $( document ).ready(function() {
+	  alert("ready");
+	  $("#audioId").bind('ended', function(){
+	        alert("All done, function!");
+	  });
+  });
+ 
+  </script>
